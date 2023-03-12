@@ -1,0 +1,14 @@
+<h2>Pokemon List</h2>
+<div class="list-grid">
+  <mat-card class="card" *ngFor="let pokemon of pokemonList">
+    <mat-card-header class="card-header">
+      <mat-card-title>{{pokemon.name}}</mat-card-title>
+      <mat-card-subtitle class="subtitle">{{pokemon.url}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+      <button mat-button (click)="navigateToPokemon(pokemon.name)">SEE MORE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<p>The total number of pokemons is: {{ pokemonListCount }}</p>

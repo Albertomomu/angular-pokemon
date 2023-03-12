@@ -1,0 +1,33 @@
+.container {
+  display: grid;
+  place-content: center;
+  height: 92vh;
+
+  .card {
+    width: 98vw;
+    background-color: #ddd;
+
+    .card-header-image {
+      background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+      background-size: cover;
+
+      .pokemon-types {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    .stats-container {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .accordion {
+    width: 100%;
+  }
+
+  .content-container {
+    display: flex;
+  }
+}

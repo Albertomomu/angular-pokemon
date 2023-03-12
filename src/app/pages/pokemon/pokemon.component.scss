@@ -1,0 +1,21 @@
+.list-grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 1rem;
+  margin: 1rem auto;
+  width: 900px;
+  max-width: 100%;
+
+  .card {
+    ::ng-deep .mat-mdc-card-header-text {
+      overflow: hidden;
+    }
+
+    .subtitle {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<div class="container">
+  <mat-card class="card" *ngIf="pokemon; else loading">
+    <mat-card-header>
+      <div mat-card-avatar class="card-header-image">
+      </div>
+      <mat-card-title>{{pokemon.name}}</mat-card-title>
+      <mat-card-subtitle class="pokemon-types">
+        <span *ngFor="let type of pokemon.types">{{ type.type.name }} | </span>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <div class="content-container">
+      <img mat-card-image width="400px" height="auto" src="{{pokemon.sprites.other.home.front_default}}"
+        alt="Pokemon photo">
+      <mat-card-content>
+        <div>
+          <mat-list-item class="stats-container" *ngFor="let stat of pokemon.stats">
+            <mat-icon matListItemIcon>health_and_safety</mat-icon>
+            <div matListItemTitle>{{stat.stat.name}}: {{stat.base_stat}}</div>
+          </mat-list-item>
+        </div>
+      </mat-card-content>
+    </div>
+    <mat-card-actions>
+      <mat-accordion class="accordion">
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Abilities
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ol>
+            <li *ngFor="let ability of pokemon.abilities">{{ability.ability.name}}</li>
+          </ol>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-actions>
+  </mat-card>
+
+  <ng-template #loading>Loading...</ng-template>
+</div>
