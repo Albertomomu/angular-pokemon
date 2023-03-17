@@ -4,7 +4,7 @@
   height: 92vh;
 
   .card {
-    width: 98vw;
+    width: 45vw;
     background-color: #ddd;
 
     .card-header-image {
@@ -39,5 +39,6 @@
 
   .content-container {
     display: flex;
+    justify-content: space-around;
   }
 }

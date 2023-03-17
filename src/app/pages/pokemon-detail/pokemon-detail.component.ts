@@ -29,7 +29,6 @@ export class PokemonDetailComponent {
 
   getPokemonDetails() {
     const name: any = this.route.snapshot.paramMap.get('name');
-    console.log(name)
     this.pokemonService.getPokemonByName({ name }).subscribe((data: IPokemon) => {
       this.pokemon = data
       console.log(data)
