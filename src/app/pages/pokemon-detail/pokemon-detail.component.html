@@ -5,22 +5,23 @@
       </div>
       <mat-card-title>{{pokemon.name}}</mat-card-title>
       <mat-card-subtitle class="pokemon-types">
-        <span *ngFor="let type of pokemon.types">{{ type.type.name }} | </span>
+        <span *ngFor="let type of pokemon.types">{{ type.type.name }} |</span>
       </mat-card-subtitle>
     </mat-card-header>
     <div class="content-container">
       <img mat-card-image width="400px" height="auto" src="{{pokemon.sprites.other.home.front_default}}"
         alt="Pokemon photo">
-      <mat-card-content>
+      <mat-card-content class="card-content">
         <div>
           <mat-list-item class="stats-container" *ngFor="let stat of pokemon.stats">
             <mat-icon matListItemIcon>health_and_safety</mat-icon>
             <div matListItemTitle>{{stat.stat.name}}: {{stat.base_stat}}</div>
           </mat-list-item>
         </div>
+
       </mat-card-content>
     </div>
-    <mat-card-actions>
+    <mat-card-actions class="pokemon-attributes">
       <mat-accordion class="accordion">
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
@@ -30,6 +31,18 @@
           </mat-expansion-panel-header>
           <ol>
             <li *ngFor="let ability of pokemon.abilities">{{ability.ability.name}}</li>
+          </ol>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion class="accordion">
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Games
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ol>
+            <li *ngFor="let game of pokemon.game_indices">Game: {{game.version.name}} | Index: {{game.game_index}}</li>
           </ol>
         </mat-expansion-panel>
       </mat-accordion>

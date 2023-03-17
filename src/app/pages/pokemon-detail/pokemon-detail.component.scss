@@ -21,6 +21,16 @@
       display: flex;
       align-items: center;
     }
+
+    .pokemon-attributes {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  .card-content {
+    display: flex;
   }
 
   .accordion {
