@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonComponent } from './pages/pokemon/pokemon.component';
 import { PokemonDetailComponent } from './pages/pokemon-detail/pokemon-detail.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PokemonDetailComponent } from './pages/pokemon-detail/pokemon-detail.co
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
